@@ -53,6 +53,13 @@ const PolicyCard = ({
             <p className="text-foreground leading-relaxed mb-6">
               {content}
             </p>
+            {isOpen && (
+              <div className="text-foreground leading-relaxed mb-6">
+                {readMore.split('\n').map((line, idx) =>
+                  line.trim() === '' ? <br key={idx} /> : <p key={idx}>{line}</p>
+                )}
+              </div>
+            )}
             <Button
               variant="conservative"
               size="lg"

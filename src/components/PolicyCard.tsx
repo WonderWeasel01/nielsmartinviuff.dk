@@ -54,10 +54,8 @@ const PolicyCard = ({
               {content}
             </p>
             {isOpen && (
-              <div className="text-foreground leading-relaxed mb-6">
-                {readMore.split('\n').map((line, idx) =>
-                  line.trim() === '' ? <br key={idx} /> : <p key={idx}>{line}</p>
-                )}
+              <div className="text-foreground leading-relaxed mb-6" style={{ whiteSpace: 'pre-line' }}>
+                {readMore}
               </div>
             )}
             <Button

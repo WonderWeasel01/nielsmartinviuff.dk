@@ -7,6 +7,7 @@ import localBusiness from '@/assets/local-business.webp';
 import sustainableDevelopment from '@/assets/sustainable-development.webp';
 import townHall from '@/assets/town-hall.webp';
 import advancement from '@/assets/advancement.webp';
+import ældrevelfærd from '@/assets/ældrevelfærd.webp';
 
 const iconList = [
   <GraduationCap size={24} />,
@@ -20,6 +21,7 @@ const iconList = [
 const imageList = [
   digitalClassroom,
   schoolChildren,
+  ældrevelfærd,
   sustainableDevelopment,
   localBusiness,
   townHall,
@@ -86,7 +88,7 @@ const Policies = () => {
                 title={policy.title}
                 description={policy.description}
                 content={policy.content}
-                image={imageMap[policy.title] || imageList[index % imageList.length]}
+                image={imageList[index % imageList.length]}
                 imageAlt={policy.title}
                 icon={iconList[index % iconList.length]}
                 isReversed={index % 2 === 1}
@@ -94,8 +96,8 @@ const Policies = () => {
                 onToggle={() => setOpenIndex(openIndex === index ? null : index)}
               />
               {openIndex === index && (
-                <div className="mt-4 p-4 bg-white rounded shadow">
-                  {policy.readMore}
+                <div className="mt-4 p-4 bg-white rounded shadow" style={{ whiteSpace: 'pre-line' }}>
+                  {policy.readMore ?? ""}
                 </div>
               )}
             </div>

@@ -31,9 +31,9 @@ const Policies = () => {
   const [policies, setPolicies] = useState([]);
 
   useEffect(() => {
-   fetch("http://localhost:4000/api/localhost:8080", {
+   fetch("https://onezite.dk/api/nielsmartinviuff.dk", {
   headers: {
-    "x-admin-password": "test"
+    "x-admin-password": "0jWjKc"
   }
 })
       .then(res => res.json())

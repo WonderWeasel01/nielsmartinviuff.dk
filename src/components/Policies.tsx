@@ -26,6 +26,15 @@ const imageList = [
   advancement
 ];
 
+const imageMap: Record<string, string> = {
+  "Digital undervisning": digitalClassroom,
+  "Skolebørn": schoolChildren,
+  "Bæredygtig udvikling": sustainableDevelopment,
+  "Lokalt erhvervsliv": localBusiness,
+  "Rådhus": townHall,
+  "Fremgang": advancement
+};
+
 const Policies = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [policies, setPolicies] = useState([]);
@@ -77,7 +86,7 @@ const Policies = () => {
                 title={policy.title}
                 description={policy.description}
                 content={policy.content}
-                image={imageList[index % imageList.length]}
+                image={imageMap[policy.title] || imageList[index % imageList.length]}
                 imageAlt={policy.title}
                 icon={iconList[index % iconList.length]}
                 isReversed={index % 2 === 1}
